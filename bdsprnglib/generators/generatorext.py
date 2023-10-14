@@ -1,4 +1,5 @@
 from enum import IntEnum
+from ..rng.xorshift import Xorshift
 
 class ShinyType(IntEnum):
     Nothing = 0
@@ -45,7 +46,7 @@ def _generate_ivs(rng:Xorshift, flawless_ivs:int):
         while True:
             idx = rng.get_rand() % 6
             if ivs[idx] == 32:
-                intivs[idx] = 31
+                ivs[idx] = 31
                 break
 
     for i in range(6):
