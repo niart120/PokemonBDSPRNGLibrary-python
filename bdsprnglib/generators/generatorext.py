@@ -9,6 +9,9 @@ class ShinyType(IntEnum):
     StarSquare = 6
     Any = 7
 
+    def __str__(self):
+        return f'{self.name}'
+
 class SizeType(IntEnum):
     Nothing = 0
     XXXS = 1
@@ -22,6 +25,9 @@ class SizeType(IntEnum):
     XXXL = 256
     XXXSXXXL = 257
     Any = 511
+
+    def __str__(self):
+        return f'{self.name}'
 
 def _to_size_type(size:int):
     if size == 0: return SizeType.XXXS
